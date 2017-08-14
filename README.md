@@ -156,7 +156,10 @@
 - 头像风格
     
     avatar: true        //为true时表示头像为圆框, 否则为方框
-    
+
+- 友链默认头像
+
+    friend_links: friend_links.jpg  // 指向source/images/friend_links.jpg, 你可以自己定制修改路径
         
 ## 写在最后
 
