@@ -7,7 +7,7 @@
         <% theme.sidebar.friend_links.forEach(function (link) { %>
         <li>
             <!-- TODO change avatar.png to friend.png-->
-            <img src="<% if (link.icon) { %><%= link.icon %><% } else { %><%= url_for('/images/avatar.png') %> <% } %>">
+            <img src="<% if (link.icon) { %><%= link.icon %><% } else { %><%= url_for(`/images/${theme.friend_links}`) %> <% } %>">
             <a href="<%= link.url %>" target="_blank"><%= link.title %></a>
         </li>
         <% }) %>
