@@ -1,3 +1,4 @@
+<% if (site.categories.length > 0) { %>
 <div class="cube-categories cube-sidebar" id="cube-categories">
     <div class="title">
         <a href="<%- url_for('/categories') %>"><%= __('categories') %></a>
@@ -13,3 +14,4 @@
         <% }) %>
     </div>
 </div>
+<% } %>

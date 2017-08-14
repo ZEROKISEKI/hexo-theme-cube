@@ -1,3 +1,4 @@
+<% if (site.tags.length > 0) { %>
 <div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
     <div class="title">
         <a href="<%- url_for('/tags') %>"><%= __('tagcloud') %></a>
@@ -13,3 +14,4 @@
         <% }) %>
     </div>
 </div>
+<% } %>
