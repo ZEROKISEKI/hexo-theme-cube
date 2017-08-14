@@ -134,6 +134,8 @@
     如果使用路径的话在本地测试会出现音乐无法播放或者`Error happen`的情况(用url可能也会, 在`APlayer`的代码中表示下载失败的错误, 这锅表示不背),
     所以最好的情况是用cdn url引用而不是路径
     
+    如果音乐配置没有设置对应的`image`, 那么默认使用`source/images/music/default.jpg`(图片可以换成你想要的)
+    
     注意! 如果引用cdn url, 那么要开启跨域访问(access-origin为您的域名, 因为`APlayer`对lrc的加载采用的是XMLHttpRequest)
     
     关于音乐的设置:
@@ -150,7 +152,7 @@
           
     这个配置其实是配置`APlayer`的, 具体的说明和参数选择可以直接看[文档](https://aplayer.js.org/docs/#/)
     
-
+    
 - 头像风格
     
     avatar: true        //为true时表示头像为圆框, 否则为方框
