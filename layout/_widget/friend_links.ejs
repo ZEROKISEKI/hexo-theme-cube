@@ -1,0 +1,16 @@
+<% if (theme.sidebar.friend_links.length > 0) { %>
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a><%= __('friend_links') %></a>
+    </div>
+    <ul class="list">
+        <% theme.sidebar.friend_links.forEach(function (link) { %>
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="<% if (link.icon) { %><%= link.icon %><% } else { %><%= url_for('/images/avatar.png') %> <% } %>">
+            <a href="<%= link.url %>" target="_blank"><%= link.title %></a>
+        </li>
+        <% }) %>
+    </ul>
+</div>
+<% } %>

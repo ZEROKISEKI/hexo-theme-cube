@@ -1,0 +1,46 @@
+<div class="cube-boxs">
+    <% site.tags.forEach(function (tag, index) { %>
+    <% let rand = Math.floor(Math.random() * 4)
+       let i = index % 4
+    %>
+    <div class="<% if (rand === i) { %><%= 'cube-box-bg' %> <% } else { %><%= 'cube-box' %> <% } %>">
+        <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+    </div>
+    <% }) %>
+</div>
+<div class="cube-archives">
+    <% site.tags.forEach(function (tag) { %>
+        <div class="cube-archive">
+            <h1 class="title"><%= tag.name %></h1>
+            <% if (theme.preview === true) { %>
+            <ul class="preview-posts">
+                <% tag.posts.forEach(function (post) { %>
+                <li class="preview-post">
+                    <div class="preview">
+                        <% if (post.preview) { %>
+                        <% let isUrl = /https?:\/\//.test(post.preview) ? post.preview: url_for(`images/previews/${post.preview}`) %>
+                        <div style="background-image: url(<%= isUrl %>);"></div>
+                        <% } else { %>
+                        <% let isUrl = /https?:\/\//.test(theme.preview_default) ? theme.preview_default : url_for(`images/${theme.preview_default}`) %>
+                        <div style="background-image: url(<%= isUrl %>);"></div>
+                        <% } %>
+                    </div>
+                    <div class="info">
+                        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                        <p class="date"><%= post.date.format('YYYY-MM-DD') %></p>
+                    </div>
+                </li>
+                <% }) %>
+            </ul>
+            <% } else { %>
+            <ul class="posts">
+                <% tag.posts.forEach(function (post) { %>
+                <li class="post">
+                    <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                </li>
+                <% }) %>
+            </ul>
+            <% } %>
+        </div>
+    <% }) %>
+</div>

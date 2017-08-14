@@ -1,0 +1,27 @@
+<div class="cube-excerpt" id="cube-excerpt-<%= item.title %>">
+    <header class="cube-excerpt-header">
+        <h1><a href="<%- url_for(item.path) %>"><%= item.title %></a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                <%= item.date.format('YYYY-MM-DD') %>
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                <% item.tags.data.forEach(function (tag) { %>
+                <a href="<%- url_for(tag.path) %>" class="cube-excerpt-tag-link">#<%= tag.name %></a>
+                <% }) %>
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        <% if (item.excerpt) { %>
+           <%- item.excerpt %>
+        <% } else { %>
+           <%- item.content %>
+        <% } %>
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="<%- url_for(item.path) %>"><%= __('read_more') %></a>
+    </footer>
+</div>

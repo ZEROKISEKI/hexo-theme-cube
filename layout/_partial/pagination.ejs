@@ -1,0 +1,99 @@
+<% if(page.total > 0) { %>
+<% let num = Math.ceil(site.posts.length / config.index_generator.per_page) %>
+<ul class="cube-pagination cube-pagination-<% if (num + 2 <= 5) { %><%= 6 %><% } else if (num + 2 <= 7) { %><%= 7 %><% } else { %><%= 9 %><% } %>">
+    <% if (page.prev > 0) { %>
+    <li class="cube-pagination-prev">
+        <a href="<%- url_for(page.prev_link) %>">« <%= __('prev') %></a>
+    </li>
+    <% } else { %>
+    <li class="cube-pagination-prev disabled">
+        <span>« <%= __('prev') %></span>
+    </li>
+    <% } %>
+    <% if (num <= 5) { %>
+        <% for(let i = 1; i <= num; i++) { %>
+            <% if (i === page.current) { %>
+            <li class="cube-pagination-index disabled">
+                <span><%= i %></span>
+            </li>
+            <% } else { %>
+            <li class="cube-pagination-index">
+                <a href="<% if (i === 1) { %><%= config.root %><% } else { %><%- url_for(`page/${i}`) %><% } %>"><%= i %></a>
+            </li>
+            <% } %>
+        <% } %>
+    <% } else { %>
+        <% if (page.current <= 3) { %>
+            <% for(let i = 1; i <= 4; i++) { %>
+                <% if (i === page.current) { %>
+                <li class="cube-pagination-index disabled">
+                    <span><%= i %></span>
+                </li>
+                <% } else { %>
+                <li class="cube-pagination-index">
+                    <a href="<% if (i === 1) { %><%= config.root %><% } else { %><%- url_for(`page/${i}`) %><% } %>"><%= i %></a>
+                </li>
+                <% } %>
+            <% } %>
+                <li class="cube-pagination-ellipses">
+                    <span>...</span>
+                </li>
+                <li class="cube-pagination-index">
+                    <a href="<%- url_for(`page/${num}`) %>"><%= num %></a>
+                </li>
+        <% } else if (page.current + 3 > num) { %>
+                <li class="cube-pagination-index">
+                    <a href="<%= config.root %>">1</a>
+                </li>
+                <li class="cube-pagination-ellipses">
+                    <span>...</span>
+                </li>
+            <% for (let i = num - 3; i <= num; i++) { %>
+                <% if (i === page.current) { %>
+                <li class="cube-pagination-index disabled">
+                    <span><%= i %></span>
+                </li>
+                <% } else { %>
+                <li class="cube-pagination-index">
+                    <a href="<%- url_for(`page/${i}`) %>"><%= i %></a>
+                </li>
+                <% } %>
+            <% } %>
+        <% } else { %>
+                <li class="cube-pagination-index">
+                    <a href="<%= config.root %>">1</a>
+                </li>
+                <li class="cube-pagination-ellipses">
+                    <span>...</span>
+                </li>
+            <% for (let i = page.current - 1; i <= page.current + 1; i++) { %>
+                <% if (i === page.current) { %>
+                <li class="cube-pagination-index disabled">
+                    <span><%= i %></span>
+                </li>
+                <% } else { %>
+                <li class="cube-pagination-index">
+                    <a href="<%- url_for(`page/${i}`) %>"><%= i %></a>
+                </li>
+                <% } %>
+            <% } %>
+                <li class="cube-pagination-ellipses">
+                    <span>...</span>
+                </li>
+                <li class="cube-pagination-index">
+                    <a href="<%- url_for(`page/${num}`) %>"><%= num %></a>
+                </li>
+        <% } %>
+    <% } %>
+
+    <% if (page.next > 0) { %>
+    <li class="cube-pagination-next">
+        <a href="<%- url_for(page.next_link) %>"><%= __('next') %> »</a>
+    </li>
+    <% } else { %>
+    <li class="cube-pagination-next disabled">
+        <span><%= __('next') %> »</span>
+    </li>
+    <% } %>
+</ul>
+<% } %>

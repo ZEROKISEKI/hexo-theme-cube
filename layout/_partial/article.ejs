@@ -1,0 +1,49 @@
+<div class="cube-article">
+    <%- partial('post/title', { item: item }) %>
+    <% if (!isPage) { %>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            <%= item.date.format('YYYY-MM-DD') %>
+        </div>
+        <%- partial('post/tag', { item: item }) %>
+    </div>
+    <% } else { %>
+    <div class="cube-article-header">
+        <div class="cube-article-date page">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            <%= item.date.format('YYYY-MM-DD') %>
+        </div>
+    </div>
+    <% } %>
+    <div class="cube-article-content cube-markdown">
+        <%- item.content %>
+    </div>
+</div>
+<% if (!isPage) { %>
+<div class="cube-article-nav">
+    <ul>
+        <% if (item.prev) { %>
+        <li class="prev">
+            <a href="<%= url_for(item.prev.path) %>">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                <%= item.prev.title %>
+            </a>
+        </li>
+        <% } %>
+        <% if (item.next) { %>
+        <li class="next">
+            <a href="<%= url_for(item.next.path) %>">
+                <%= item.next.title %>
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        <% } %>
+    </ul>
+</div>
+<% } %>
+<% if (!isPage || (isPage && item.comment)) { %>
+<%- partial('comment/entry', { item: item }) %>
+<% } %>

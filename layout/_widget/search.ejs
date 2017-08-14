@@ -1,0 +1,18 @@
+<% if (theme.search) { %>
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="<%= __('search') %>" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '<%- url_for('content.json') %>'
+        window.searchModule.rootUrl = '<%- config.root %>'
+    })(window)
+</script>
+<%- partial('../_partial/search') %>
+<% } %>

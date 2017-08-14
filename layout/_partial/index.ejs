@@ -1,0 +1,5 @@
+<% page.posts.forEach(function (post) { %>
+<%- partial('post/excerpt', { item: post }) %>
+<% }) %>
+<%- partial('pagination', { page: page }) %>
+<!--其他组件后续添加-->

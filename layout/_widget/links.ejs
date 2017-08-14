@@ -1,0 +1,18 @@
+<% if (theme.sidebar.links.length > 0) { %>
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a><%= __('links') %></a>
+    </div>
+    <ul class="list">
+        <% theme.sidebar.links.forEach(function (link) { %>
+        <li>
+            <% if (link.icon) { %>
+            <% let isUrl = /https?:\/\//.test(link.icon) %>
+            <img src="<%= isUrl ? link.icon : url_for(`images/${link.icon}`) %>">
+            <% } %>
+            <a href="<%= link.url %>" target="_blank"><%= link.title %></a>
+        </li>
+        <% }) %>
+    </ul>
+</div>
+<% } %>

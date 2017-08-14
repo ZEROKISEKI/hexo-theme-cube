@@ -1,0 +1,21 @@
+categories: 分类
+search: 搜索
+tags: 标签
+tagcloud: 标签云
+prev: 上一页
+next: 下一页
+comment: 留言
+articles: 文章
+tag: 标签
+category: 分类
+open_music_lrc: 开启歌词
+close_music_lrc: 关闭歌词
+scroll_to_top: 回到顶部
+archive_a: 归档
+archive_b: "归档: %s"
+page: "第 %d 页"
+recent_posts: 近期文章
+read_more: 阅读全文
+links: 个人链接
+friend_links: 友情链接
+loading: 加载中

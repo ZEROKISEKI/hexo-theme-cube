@@ -1,0 +1,22 @@
+<nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
+        <% theme.menu.forEach(function (m) { %>
+        <li>
+            <i class="cube-icon cube-icon-<%= m.icon %>" aria-hidden="true"></i>
+            <a href="<%- url_for(m.url) %>"><%- m.title %></a>
+        </li>
+        <% }) %>
+    </ul>
+</nav>
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
+        <% if (theme.music.length > 0) { %>
+        <li>
+            <a class="lrc-control"><%= __('open_music_lrc') %></a>
+        </li>
+        <% } %>
+        <li>
+            <a class="scroll-to-top"><%= __('scroll_to_top') %></a>
+        </li>
+    </ul>
+</nav>

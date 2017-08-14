@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="<%= config.author %>">
+    <% if (config.description) { %>
+    <meta name="description" content="<%= config.description %>">
+    <% } %>
+    <% let title = [config.title] %>
+    <% if (page.tag) {
+        title.unshift(`${__('tags')}: ${page.tag}`)
+    } %>
+    <% if (page.category) {
+        title.unshift(`${__('categories')}: ${page.category}`)
+    }%>
+    <% if (page.archive) {
+        title.unshift(`${__('archive_a')}`)
+    }%>
+    <% if (page.title) {
+        title.unshift(`${page.title}`)
+    }%>
+    <title><%= title.join(' | ') %></title>
+    <!-- inject:style -->
+    <link href="<%- url_for('css/style.css') %>" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('<%- url_for('images/lg/loading.gif') %>') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
+
+        .cube-loading.out {
+            display: none;
+        }
+
+        .cube-loading:before {
+            display: block;
+            content: '<%= __('loading') %>';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
+
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    <% if (theme.analytics.baidu) { %>
+    <%- partial('analytics/baidu') %>
+    <% } else if (theme.analytics.google) { %>
+    <%- partial('analytics/google') %>
+    <% } %>
+</head>

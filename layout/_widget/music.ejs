@@ -1,0 +1,43 @@
+<% if (theme.music.length > 0) { %>
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '<%- JSON.stringify({
+            narrow: theme.music_setting.narrow,
+            autoplay: theme.music_setting.auto,
+            showlrc: theme.music_setting.showlrc ? 3 : 0,
+            theme: theme.music_setting.theme ? theme.music_setting.theme : "#b7daff",
+            mutex: theme.music_setting.mutex,
+            mode: theme.music_setting.mode ? theme.music_setting.mode : "circulation",
+            preload: theme.music_setting.preload ? theme.music_setting.preload : "auto",
+            listmaxheight: theme.music_setting.maxHeight ? theme.music_setting.maxHeight : "513px",
+            music: theme.music.map(function (e) {
+                const { title, author, lrc, image, source } = e
+                const urlReg = /https?:\/\//
+                if (lrc) {
+                    return {
+                        title: title,
+                        author: author,
+                        url: urlReg.test(source) ? source : `${config.url}/music/${source}`,
+                        lrc: urlReg.test(lrc) ? lrc : `${config.url}/lrc/${lrc}`,
+                        pic: urlReg.test(image) ? image : `${config.url}/images/music/${image}`
+                    }
+                }
+                return {
+                    title: title,
+                    author: author,
+                    url: urlReg.test(source) ? source : `${config.url}/music/${source}`,
+                    pic: urlReg.test(image) ? image : `${config.url}/images/music/${image}`
+                }
+            })
+        }) %>'
+        window.musicModule.lrcConfig = {
+            open: '<%= __('open_music_lrc') %>',
+            close: '<%= __('close_music_lrc') %>'
+        }
+    })(window)
+</script>
+<% } %>

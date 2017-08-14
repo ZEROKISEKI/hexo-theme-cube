@@ -1,0 +1,53 @@
+<div class="cube-author cube-sidebar" id="cube-author">
+    <% if (config.avatar) {
+      let isUrl = /https?:\/\//.test(config.avatar)
+      let avatar = isUrl ? config.avatar : `/images/${config.avatar}`
+    %>
+    <% if (theme.avatar === true) { %>
+    <style>
+        @media(min-width: 768px) {
+            .cube-author img {
+                margin-top: 40px;
+                margin-bottom: 10px;
+            }
+        }
+        @media(max-width: 1120px) and (min-width: 768px) {
+            .cube-author img {
+                width: 128px;
+                height: 128px;
+            }
+        }
+        @media(min-width: 1120px) {
+            .cube-author img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
+    <% } else { %>
+    <style>
+        @media(min-width: 768px) {
+            .cube-author img {
+                width: 90%;
+                margin: 0 auto;
+                height: auto;
+                padding: 20px 0 10px 0;
+                display: block;
+            }
+        }
+    </style>
+    <% } %>
+    <img src="<%= avatar %>" alt="avatar" class="cube-avatar">
+    <% } %>
+    <% if (config.author) { %>
+    <span><%= config.author %></span>
+    <% } %>
+    <% if (config.description) { %>
+    <a title="<%= config.description %>"><%= config.description %></a>
+    <% } %>
+    <div class="count">
+        <a class="count articles"><span><%= site.posts.length %></span><%= __('articles') %></a>
+        <a class="count tags"><span><%= site.tags.length %></span><%= __('tags') %></a>
+        <a class="count categories"><span><%= site.categories.length %></span><%= __('categories') %></a>
+    </div>
+</div>

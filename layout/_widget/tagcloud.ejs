@@ -1,0 +1,15 @@
+<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
+    <div class="title">
+        <a href="<%- url_for('/tags') %>"><%= __('tagcloud') %></a>
+    </div>
+    <div class="cube-boxs">
+        <% site.tags.forEach(function (tag, index) { %>
+        <% let rand = Math.floor(Math.random() * 4)
+            let i = index % 4
+        %>
+        <div class="<% if (rand === i) { %><%= 'cube-box-bg' %> <% } else { %><%= 'cube-box' %> <% } %>">
+            <a href="<%- url_for(tag.path) %>">#<%= tag.name %></a>
+        </div>
+        <% }) %>
+    </div>
+</div>

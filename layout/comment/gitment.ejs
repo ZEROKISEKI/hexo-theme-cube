@@ -1,0 +1,18 @@
+<!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: '<%= theme.comment.gitment.owner %>',
+        repo: '<%= theme.comment.gitment.repo %>',
+        oauth: {
+            client_id: '<%= theme.comment.gitment.oauth.client_id %>',
+            client_secret: '<%= theme.comment.gitment.oauth.client_secret %>',
+        },
+    })
+    gitment.render('container')
+</script>

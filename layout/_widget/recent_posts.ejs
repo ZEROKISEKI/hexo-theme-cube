@@ -1,0 +1,51 @@
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a><%= __('recent_posts') %></a>
+    </div>
+    <ul class="list">
+        <% site.posts.sort('date', -1).limit(5).forEach(function (post, i) { %>
+        <% if (i === 0) { %>
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            <% if (post.preview) { %>
+            <% let isUrl = /https?:\/\//.test(post.preview) ? post.preview: url_for(`images/previews/${post.preview}`) %>
+            <div class="preview">
+                <p class="index first">
+                    <span><%= i + 1 %></span>
+                </p>
+                <div class="image" style="background-image: url(<%= isUrl %>);"></div>
+                <div class="info">
+                    <p class="title">
+                        <a href="<%= url_for(post.path) %>" title="<%= post.title %>"><%= post.title %></a>
+                    </p>
+                    <p class="date">
+                        <%= post.date.format('YYYY-MM-DD') %>
+                    </p>
+                </div>
+            </div>
+            <% } else { %>
+            <div class="normal">
+                <p class="index first">
+                    <span><%= i + 1 %></span>
+                </p>
+                <p class="title">
+                    <a href="<%= url_for(post.path) %>" title="<%= post.title %>"><%= post.title %></a>
+                </p>
+            </div>
+            <% } %>
+        </li>
+        <% } else { %>
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span><%= i + 1 %></span>
+                </p>
+                <p class="title">
+                    <a href="<%= url_for(post.path) %>" title="<%= post.title %>"><%= post.title %></a>
+                </p>
+            </div>
+        </li>
+        <% } %>
+        <% }) %>
+    </ul>
+</div>

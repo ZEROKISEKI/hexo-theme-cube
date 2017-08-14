@@ -1,0 +1,12 @@
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+<% if (theme.comment.changyan && theme.comment.changyan.appid && theme.comment.changyan.conf) { %>
+<%- partial('comment/changyan', { item: item }) %>
+<% } else if (theme.comment.youyan) { %>
+<%- partial('comment/youyan', { item: item }) %>
+<% } else if (theme.comment.gitment) {
+    let gitment = theme.comment.gitment
+    if (gitment.owner && gitment.repo && gitment.oauth.client_id && gitment.oauth.client_secret) { %>
+    <%- partial('comment/gitment') %>
+    <% }
+} else if (theme.comment.disqus) { %>
+<% } %>
