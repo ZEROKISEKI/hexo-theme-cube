@@ -1,7 +1,9 @@
 # hexo-theme-cube
 
 
-一个不轻量的Hexo主题
+一个不轻量的Hexo主题: 
+
+    git clone https://github.com/ZEROKISEKI/hexo-theme-cube.git themes/cube --depth 1
 
 
 ## 演示
