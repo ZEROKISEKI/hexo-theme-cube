@@ -85,7 +85,8 @@ sidebar:
     - title: 咪西西の部落格
       url: https://aonosora.com/
 
-
+# only path, refer to source/images
+friend_links: friend_links.jpg
 
 # basic sidebar widgets
 # you can change the order freely
