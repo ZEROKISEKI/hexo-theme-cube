@@ -9,7 +9,7 @@
 ## 演示
 
 
-主题示例地址: [http://sora1.coding.me/](http://sora1.coding.me/)
+主题示例地址: [http://sora1.coding.me/](http://sora1.coding.me/){:target="_blank"}
 
 
 ### 搜索功能
@@ -68,7 +68,7 @@
 
 ![lightgallery](http://ouo1ro65u.bkt.clouddn.com/lightgallery.png)
 
-目前使用了lightgallery出现的一个问题是在原生浏览器图片貌似是加载不出来的, 这个问题待有时间再调试
+目前使用了lightgallery出现的一个问题是在我的小米4原生浏览器图片貌似是加载不出来的, 这个问题待有时间再调试
 
 
 ## 配置说明
@@ -150,7 +150,7 @@
           preload: auto                 
           maxHeight: 513px
           
-    这个配置其实是配置`APlayer`的, 具体的说明和参数选择可以直接看[文档](https://aplayer.js.org/docs/#/)
+    这个配置其实是配置`APlayer`的, 具体的说明和参数选择可以直接看[文档](https://aplayer.js.org/docs/#/){:target="blank"}
     
     
 - 头像风格
