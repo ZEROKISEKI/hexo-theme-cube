@@ -1,7 +1,11 @@
 # hexo-theme-cube
 
 
-一个不轻量的Hexo主题: 
+## 介绍
+
+
+之前用Laravel写了一个博客, 然而用起来不是那么顺手, 而且很久没写Laravel了, 不想再维护, 于是决定用回Hexo, 找了几个主题, 但是都不是特别喜欢, 主要感觉太过简约了(手动滑稽), 于是就打算自己来写一个主题, 也算是练练手了. 这个主题是最终gulp打包的结果, 如果要看源代码, 可以看我的另一个项目[cube-generator](https://github.com/ZEROKISEKI/cube-generator), 如果要做什么改动, 也是在那个项目上进行改动生成.
+
 
     git clone https://github.com/ZEROKISEKI/hexo-theme-cube.git themes/cube --depth 1
 
@@ -42,6 +46,7 @@
 
 效果图如下:
 
+
 ![图片预览](http://ouo1ro65u.bkt.clouddn.com/%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88.png)
 
 
@@ -53,7 +58,9 @@
 为`vs2015`的风格:
 
 
+
 ![代码高亮](http://ouo1ro65u.bkt.clouddn.com/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE.png)
+
 
 
 您可以进行代码风格的配置，不过要在[cube-generator](https://github.com/ZEROKISEKI/cube-generator)重新进行主题的生成(该项目有对应的文档说明)
@@ -65,7 +72,9 @@
 音乐模块采用了[DIYgod](https://github.com/MoePlayer/APlayer)的开源项目[APlayer](https://github.com/MoePlayer/APlayer), 您可以将您喜欢的音乐列表配置在您的博客上，演示效果如下:
 
 
+
 ![音乐模块](http://ouo1ro65u.bkt.clouddn.com/%E9%9F%B3%E4%B9%90%E6%A8%A1%E5%9D%97.png)
+
 
 
 侧边栏可以选择开启歌词或者关闭歌词, 相关的音乐配置在主题的`_config.yml`上面, 具体说明可以参考下面的**配置说明**
@@ -87,90 +96,92 @@
 
 以下所指的`_config.yml`均为主题的`_config.yml`!
 
+### 背景模块
 
-- 背景模块
-
-    背景模块在`_config.yml`的主要参数如下:
+背景模块在`_config.yml`的主要参数如下:
     
-        header:
-          background: http://cube-1252774894.cosgz.myqcloud.com/background.png
-          title: senrenbankaの部落格
-        background: http://cube-1252774894.cosgz.myqcloud.com/background.png
-        position: 400
-        blur: 5        
-
-    `header.background`和`background`分别指移动端和PC端的背景图, 你可以让两个值都为同一个url, 或者分开两个url(当然路径也可以, 见`_config.yml`的说明)
+    header:
+       background: http://cube-1252774894.cosgz.myqcloud.com/background.png
+       title: senrenbankaの部落格
+    background: http://cube-1252774894.cosgz.myqcloud.com/background.png
+    position: 400
+    blur: 5        
+   
+`header.background`和`background`分别指移动端和PC端的背景图, 你可以让两个值都为同一个url, 或者分开两个url(当然路径也可以, 见`_config.yml`的说明)
     
-    `header.title`为博客标题(中间动态加载的文字, 参照了DIYgod博客的效果, 自己做的比较搓)
+`header.title`为博客标题(中间动态加载的文字, 参照了DIYgod博客的效果, 自己做的比较搓)
     
-    `position`为图片的定位, 如果`position`为0, 则表示图片全部显示
+`position`为图片的定位, 如果`position`为0, 则表示图片全部显示
     
-    `blur`为顶部导航栏的模糊度, 您可以修改该值来达到一个比较满意的模糊度
+`blur`为顶部导航栏的模糊度, 您可以修改该值来达到一个比较满意的模糊度
     
 
-- 开启搜索功能
+### 开启搜索功能
 
-    开启搜索功能除了在上面提到的要在Hexo站点配置`hexo-generator-json-content`之外,还要在`_config.yml`进行配置:
+开启搜索功能除了在上面提到的要在Hexo站点配置`hexo-generator-json-content`之外,还要在`_config.yml`进行配置:
     
-        search: true
-        
+    search: true
+           
 
-- 音乐模块
+### 音乐模块
 
-    在本项目的`_config.yml`我们可以看到
+在本项目的`_config.yml`我们可以看到
     
-        music:
-          - title: Dear friends
-            author: TRIPLANE
-            source: http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3
-            lrc: http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc
-            image: http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg
-          - title: Butter-Fly
-            author: 和田光司
-            source: http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3
-            lrc: http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc
-            image: http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg
-          - title: 宵闇花火
-            author: 葉月ゆら
-            source: http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3
-            lrc: http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc
-            image: http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg
+    music:
+      - title: Dear friends
+         author: TRIPLANE
+         source: http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3
+         lrc: http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc
+         image: http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg
+      - title: Butter-Fly
+         author: 和田光司
+         source: http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3
+         lrc: http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc
+         image: http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg
+      - title: 宵闇花火
+         author: 葉月ゆら
+         source: http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3
+         lrc: http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc
+         image: http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg
+    
      
-    source, lrc, image 可以填路径或者url, 下面是填路径时对应的地址:
-    
-        source -> source/music, 示例: source: music1.mp3 意味着你的音乐的路径是 source/music/music1.mp3
-        lrc -> source/lrc, 示例: lrc: music1.lrc 意味着你的音乐的路径是 source/lrc/music1.lrc
-        image -> source/images/music 示例: image: music1.jpg 意味着你的音乐的路径是 source/images/music/music1.jpg
-    
-    如果使用路径的话在本地测试会出现音乐无法播放或者`Error happen`的情况(用url可能也会, 在`APlayer`的代码中表示下载失败的错误, 这锅表示不背), 所以最好的情况是用cdn url引用而不是路径
-    
-    如果音乐配置没有设置对应的`image`, 那么默认使用`source/images/music/default.jpg`(图片可以换成你想要的)
-    
-    注意! 如果引用cdn url, 那么要开启跨域访问(access-origin为您的域名, 因为`APlayer`对lrc的加载采用的是XMLHttpRequest)
+source, lrc, image 可以填路径或者url, 下面是填路径时对应的地址:
     
     
-    关于音乐的设置:
+    source -> source/music, 示例: source: music1.mp3 意味着你的音乐的路径是 source/music/music1.mp3
+    lrc -> source/lrc, 示例: lrc: music1.lrc 意味着你的音乐的路径是 source/lrc/music1.lrc
+    image -> source/images/music 示例: image: music1.jpg 意味着你的音乐的路径是 source/images/music/music1.jpg
     
-        music_setting:
-          auto: false                       //true为自动播放, 默认为false
-          mode: circulation                 //circulation为循环播放, 可填的值为random,single,order等
-          narrow: false
-          mutex: true
-          showlrc: true                     
-          theme:                            //设置音乐模块颜色, 默认为#b7daff
-          preload: auto                 
-          maxHeight: 513px
+如果使用路径的话在本地测试会出现音乐无法播放或者`Error happen`的情况(用url可能也会, 在`APlayer`的代码中表示下载失败的错误, 这锅表示不背), 所以最好的情况是用cdn url引用而不是路径
+    
+如果音乐配置没有设置对应的`image`, 那么默认使用`source/images/music/default.jpg`(图片可以换成你想要的)
+    
+注意! 如果引用cdn url, 那么要开启跨域访问(access-origin为您的域名, 因为`APlayer`对lrc的加载采用的是XMLHttpRequest)
+    
+关于音乐的设置:
+    
+    music_setting:
+      auto: false                       //true为自动播放, 默认为false
+      mode: circulation                 //circulation为循环播放, 可填的值为random,single,order等
+      narrow: false
+      mutex: true
+      showlrc: true                     
+      theme:                            //设置音乐模块颜色, 默认为#b7daff
+      preload: auto                 
+      maxHeight: 513px                  //这个可以不用改动
           
-    这个配置其实是配置`APlayer`的, 具体的说明和参数选择可以直接看[文档](https://aplayer.js.org/docs/#/)
+这个配置其实是配置`APlayer`的, 具体的说明和参数选择可以直接看[文档](https://aplayer.js.org/docs/#/)
     
     
-- 头像风格
+### 头像风格
     
-        avatar: true        //为true时表示头像为圆框, 否则为方框
+    avatar: true        //为true时表示头像为圆框, 否则为方框
+        
+    
+### 友链默认头像
 
-- 友链默认头像
-
-        friend_links: friend_links.jpg  // 指向source/images/friend_links.jpg, 你可以自己定制修改路径
+    friend_links: friend_links.jpg  // 指向source/images/friend_links.jpg, 你可以自己定制修改路径
+       
         
 ## 写在最后
 
