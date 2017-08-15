@@ -9,7 +9,7 @@
 ## 演示
 
 
-主题示例地址: [http://sora1.coding.me/](http://sora1.coding.me/){:target="_blank"}
+主题示例地址: [http://sora1.coding.me/](http://sora1.coding.me/)
 
 
 ### 搜索功能
@@ -17,8 +17,8 @@
 
 ![搜索功能](http://ouo1ro65u.bkt.clouddn.com/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD.png)
 
-搜索框的设计样式参考了[ppoffice](https://github.com/ppoffice/hexo-theme-icarus)的设计样式,
-只要进行输入即可进行对应的搜索, 此功能需要在您的Hexo站点上进行`hexo-generator-json-content`的安装和设置
+
+搜索框的设计样式参考了[ppoffice](https://github.com/ppoffice/hexo-theme-icarus)的设计样式,只要进行输入即可进行对应的搜索, 此功能需要在您的Hexo站点上进行`hexo-generator-json-content`的安装和设置
 
     npm install hexo-generator-json-content --save
     
@@ -36,6 +36,15 @@
         path: true
         preview: true
 
+您可以在`hexo new`或者`hexo new page`生成md文件后往`front-matter`(不知道是什么可以上[Hexo官网](https://hexo.io/)看下)添加对应的`preview`地址:
+
+    preview: http://ouo1ro65u.bkt.clouddn.com/图片预览.png
+
+效果图如下:
+
+![图片预览](http://ouo1ro65u.bkt.clouddn.com/%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88.png)
+
+
 
 ### 代码高亮
 
@@ -43,22 +52,23 @@
 代码的高亮采用了[highlight.js](https://github.com/isagalaev/highlight.js), 如下图为代码风格设置
 为`vs2015`的风格:
 
+
 ![代码高亮](http://ouo1ro65u.bkt.clouddn.com/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE.png)
 
-您可以进行代码风格的配置，不过要在[cube-generator](https://github.com/ZEROKISEKI/cube-generator)重新进
-行主题的生成(该项目对应的文档说明)
+
+您可以进行代码风格的配置，不过要在[cube-generator](https://github.com/ZEROKISEKI/cube-generator)重新进行主题的生成(该项目有对应的文档说明)
 
 
 ### 音乐模块
 
 
-音乐模块采用了[DIYgod](https://github.com/MoePlayer/APlayer)的开源项目[APlayer](https://github.com/MoePlayer/APlayer), 您可以将您喜欢
-的音乐列表配置在您的博客上，演示效果如下:
+音乐模块采用了[DIYgod](https://github.com/MoePlayer/APlayer)的开源项目[APlayer](https://github.com/MoePlayer/APlayer), 您可以将您喜欢的音乐列表配置在您的博客上，演示效果如下:
+
 
 ![音乐模块](http://ouo1ro65u.bkt.clouddn.com/%E9%9F%B3%E4%B9%90%E6%A8%A1%E5%9D%97.png)
 
-侧边栏可以选择开启歌词或者关闭歌词, 相关的音乐配置在主题的`_config.yml`上面, 具体说明可以参考下面的
-**配置说明**
+
+侧边栏可以选择开启歌词或者关闭歌词, 相关的音乐配置在主题的`_config.yml`上面, 具体说明可以参考下面的**配置说明**
 
 
 ### lightgallery
@@ -66,7 +76,9 @@
 
 该主题采用了[lightgallery](https://github.com/sachinchoolur/lightGallery)进行图片展示，效果如下(展示在做这个主题之前, 我都不知道有lightgallery这个东西2333):
 
+
 ![lightgallery](http://ouo1ro65u.bkt.clouddn.com/lightgallery.png)
+
 
 目前使用了lightgallery出现的一个问题是在我的小米4原生浏览器图片貌似是加载不出来的, 这个问题待有时间再调试
 
@@ -87,8 +99,7 @@
         position: 400
         blur: 5        
 
-    `header.background`和`background`分别指移动端和PC端的背景图, 你可以让两个值都为
-    同一个url, 或者分开两个url(当然路径也可以, 见`_config.yml`的说明)
+    `header.background`和`background`分别指移动端和PC端的背景图, 你可以让两个值都为同一个url, 或者分开两个url(当然路径也可以, 见`_config.yml`的说明)
     
     `header.title`为博客标题(中间动态加载的文字, 参照了DIYgod博客的效果, 自己做的比较搓)
     
@@ -131,12 +142,12 @@
         lrc -> source/lrc, 示例: lrc: music1.lrc 意味着你的音乐的路径是 source/lrc/music1.lrc
         image -> source/images/music 示例: image: music1.jpg 意味着你的音乐的路径是 source/images/music/music1.jpg
     
-    如果使用路径的话在本地测试会出现音乐无法播放或者`Error happen`的情况(用url可能也会, 在`APlayer`的代码中表示下载失败的错误, 这锅表示不背),
-    所以最好的情况是用cdn url引用而不是路径
+    如果使用路径的话在本地测试会出现音乐无法播放或者`Error happen`的情况(用url可能也会, 在`APlayer`的代码中表示下载失败的错误, 这锅表示不背), 所以最好的情况是用cdn url引用而不是路径
     
     如果音乐配置没有设置对应的`image`, 那么默认使用`source/images/music/default.jpg`(图片可以换成你想要的)
     
     注意! 如果引用cdn url, 那么要开启跨域访问(access-origin为您的域名, 因为`APlayer`对lrc的加载采用的是XMLHttpRequest)
+    
     
     关于音乐的设置:
     
@@ -150,21 +161,19 @@
           preload: auto                 
           maxHeight: 513px
           
-    这个配置其实是配置`APlayer`的, 具体的说明和参数选择可以直接看[文档](https://aplayer.js.org/docs/#/){:target="blank"}
+    这个配置其实是配置`APlayer`的, 具体的说明和参数选择可以直接看[文档](https://aplayer.js.org/docs/#/)
     
     
 - 头像风格
     
-    avatar: true        //为true时表示头像为圆框, 否则为方框
+        avatar: true        //为true时表示头像为圆框, 否则为方框
 
 - 友链默认头像
 
-    friend_links: friend_links.jpg  // 指向source/images/friend_links.jpg, 你可以自己定制修改路径
+        friend_links: friend_links.jpg  // 指向source/images/friend_links.jpg, 你可以自己定制修改路径
         
 ## 写在最后
 
 
-这个项目是目前实习阶段抽空做的, 近段时间估计不怎么更新修改维护(白天实习, 晚上毕设有点忙), 9月份之后估计就有空了,
-这个主题项目是由[cube-generator](https://github.com/ZEROKISEKI/cube-generator)生成的, [cube-generator](https://github.com/ZEROKISEKI/cube-generator)的gulp构建比较蛋疼, 里面的JS代码也很乱, 预计后面
-再改, 如果你想看原来的主题代码, 那么可以关注下[cube-generator](https://github.com/ZEROKISEKI/cube-generator)
+这个项目是目前实习阶段抽空做的, 近段时间估计不怎么更新修改维护(白天实习, 晚上毕设有点忙), 9月份之后估计就有空了,这个主题项目是由[cube-generator](https://github.com/ZEROKISEKI/cube-generator)生成的, [cube-generator](https://github.com/ZEROKISEKI/cube-generator)的gulp构建比较蛋疼, 里面的JS代码也很乱, 预计后面再改, 如果你想看原来的主题代码, 那么可以关注下[cube-generator](https://github.com/ZEROKISEKI/cube-generator)
 
