@@ -43,7 +43,7 @@
 
 效果图如下:
 
-![图片预览](http://ouo1ro65u.bkt.clouddn.com/图片预览.png)
+![图片预览](http://ouo1ro65u.bkt.clouddn.com/%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88.png)
 
 
 
