@@ -15,6 +15,7 @@
         </div>
     </header>
     <article class="cube-excerpt-entry cube-markdown">
+        <%- partial('gallery', { item: item }) %>
         <% if (item.excerpt) { %>
            <%- item.excerpt %>
         <% } else { %>

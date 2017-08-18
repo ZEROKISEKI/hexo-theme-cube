@@ -19,6 +19,7 @@
     </div>
     <% } %>
     <div class="cube-article-content cube-markdown">
+        <%- partial('post/gallery', { item: item }) %>
         <%- item.content %>
     </div>
 </div>
