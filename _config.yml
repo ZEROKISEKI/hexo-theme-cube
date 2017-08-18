@@ -1,33 +1,35 @@
 theme: cube
 
+# background display for mobile, not for pc
 header:
-  background: http://example.com/background.png
+  background: http://cube-1252774894.cosgz.myqcloud.com/background.png
+  # both pc and mobile required title(make it the same as your hexo site _config.yml's title)
   title: senrenbankaの部落格
 
 
-# if you use path, for example:
-# background: background.png means that your
-# should place your image(called "background.png")
-# to the path "source/images/background.png"
-background: http://example.com/background.png
+# background display for pc
+# you can use url or path relative
+# `background: background.png` refers to the path "source/images/background.png"
+background: http://cube-1252774894.cosgz.myqcloud.com/background.png
+
+
+# the background image width and height (you can see your image file to get them)
+width: 2000
+height: 1414
 
 
 # this variable is used to locate your background
-# you know, on different devices, it have different view even if you use the same
-# background, so it make your background display section instead of all the background
 # for example, if you want to locate display your background from top
 # you just need to type it: position: 0
 position: 400
 
 
 # this variable is used to make the background header being fuzzy
-# if your do not need the filter blur on the top
-# please make it empty, it means that: blur:
-# if you do not understand it, then you can see my blog to find what mean it is
+# if your do not need the filter blur on the top, make it empty, it means that: `blur: `
 blur: 5
 
-# yeah, this avatar is just make your avatar rounded or not
-# if your want to have a rounded avatar, please make it true
+
+# yeah, it is just to make your avatar rounded(true) or not(false)
 avatar: true
 
 menu:
@@ -56,28 +58,27 @@ sidebar:
   links:
     - title: GitHub
       url: https://github.com/ZEROKISEKI
-      # icon can be url or path(best is use cdn bucket url)
-      icon: http://example.com//GitHub.png
+      # icon can be url or path
+      icon: http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png
     - title: Coding
       url: https://coding.net/u/SORA1
-      icon: http://example.com/Coding.png
+      icon: http://cube-1252774894.cosgz.myqcloud.com/links/Coding.png
     - title: SF社区
       url: https://segmentfault.com/u/aonosora
-      icon: http://example.com/SF.png
+      icon: http://cube-1252774894.cosgz.myqcloud.com/links/SF.png
     - title: 开发者头条
       url: https://toutiao.io/u/148070
-      icon: http://example.com/开发者头条.png
+      icon: http://cube-1252774894.cosgz.myqcloud.com/links/开发者头条.png
   friend_links:
+    - title: 罗大佬
+      url: https://blog.micblo.com/
+      # icon only url
+      icon: http://cube-1252774894.cosgz.myqcloud.com/friend_links/micblo.png
+    - title: DIYgod
+      url: https://www.anotherhome.net/
+      icon: http://cube-1252774894.cosgz.myqcloud.com/friend_links/DIYgod.jpg
     - title: 咪西西の部落格
       url: https://aonosora.com/
-      # icon only url
-      icon: http://example.com/micblo.png
-    - title:
-      url:
-      icon:
-      # if do not have icon, it will use friend_links
-    - title:
-      url:
 
 # only path, refer to source/images
 friend_links: friend_links.jpg
@@ -92,55 +93,57 @@ widgets:
 - links
 - friend_links
 
+# when you want to use the search, firstly make the `search: true`,
+# then you should install hexo-generator-json-content
+# run `npm install hexo-generator-json-content -save` (in your hexo directory)
 search: true
 
 # supported by DIYgod awesome project APlayer, you can find more on https://github.com/MoePlayer/APlayer
 # and you can see the doc on https://aplayer.js.org/docs/#/
+
+# mode can be `random`, `single`, `circulation`(loop), `order`(no loop)
+# if you have the lrc file, make the `showlrc` true, else make it false
 music_setting:
   auto: false
   mode: circulation
   narrow: false
   mutex: true
-  # if you have the lrc file, make the `showlrc` true, else make it false
   showlrc: true
   theme:
   preload: auto
   maxHeight: 513px
 
 # if you use path, make sure your hexo _config.yml has set the correcting url
-# url: http://www.yoururl.com(notice it not allow to set it localhost)
+# url: http://www.yoururl.com/path/to/.mp3 or .lrc or ...
 # you'd better place your music and image, lrc to another site, and use url instead of path
 # if you don't want to use this widget, just make that `music: `
 music:
   - title: Dear friends
     author: TRIPLANE
-    # source: path or url(path to source/music) for example, music1.mp3 refer to source/music/music1.mp3
-    source: http://example.com/TRIPLANE - Dear friends.mp3
-    # lrc: path or url(path to source/lrc) for example, music1.lrc refer to source/lrc/music1.lrc
-    lrc: http://example.com/Dear friends - TRIPLANE.lrc
-    # image: path or url(path to source/images/music) for example, music1.png refer to source/images/music/music1.png
-    image: http://example.com/TRIPLANE - Dear friends.jpg
-  - title:
-    author:
-    source:
-    lrc:
-    image:
-  - title:
-    author:
-    source:
-    lrc:
-    image:
+    source: http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3
+    lrc: http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc
+    image: http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg
+  - title: Butter-Fly
+    author: 和田光司
+    source: http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3
+    lrc: http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc
+    image: http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg
+  - title: 宵闇花火
+    author: 葉月ゆら
+    source: http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3
+    lrc: http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc
+    image: http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg
 
 # before using the comment
 # make use you know how to set the params
 comment:
+  # your disqus_shortname
   disqus:
   changyan:
     appid:
     conf:
   youyan:
   # gitment: https://github.com/imsun/gitment
-  # blog: https://imsun.net/posts/gitment-introduction/
   # make sure you know how to set it
   gitment:
     owner:
@@ -155,5 +158,5 @@ comment_setting:
     hide_notice: true
 
 analytics:
-  baidu: #hash
-  google: #hash
+  baidu:
+  google:

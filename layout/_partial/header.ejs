@@ -59,5 +59,16 @@
         <% } %>
     </header>
     <div class="load-header-background"></div>
+    <script>
+        (function (window) {
+
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '<%= theme.width %>',
+                height: '<%= theme.height %>'
+            }
+
+        })(window)
+    </script>
     <% }
 } %>
