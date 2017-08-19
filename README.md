@@ -15,8 +15,6 @@
 
 主题示例地址: [http://sora1.coding.me/](http://sora1.coding.me/)
 
-![主题预览](http://ouo1ro65u.bkt.clouddn.com/cube-4.png)
-
 
 ### 搜索功能
 
