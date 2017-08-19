@@ -4,7 +4,7 @@
 ## 介绍
 
 
-之前用Laravel写了一个博客, 然而用起来不是那么顺手, 而且很久没写Laravel了, 不想再维护, 于是决定用回Hexo, 找了几个主题, 但是都不是特别喜欢, 主要感觉太过简约了(手动滑稽), 于是就打算自己来写一个主题, 也算是练练手了. 这个主题是最终gulp打包的结果, 如果要看源代码, 可以看我的另一个项目[cube-generator](https://github.com/ZEROKISEKI/cube-generator), 如果要做什么改动, 也是在那个项目上进行改动生成.
+这个主题是gulp打包的结果, 如果要看源代码, 可以看我的另一个项目[cube-generator](https://github.com/ZEROKISEKI/cube-generator).
 
 
     git clone https://github.com/ZEROKISEKI/hexo-theme-cube.git themes/cube --depth 1
@@ -14,6 +14,9 @@
 
 
 主题示例地址: [http://sora1.coding.me/](http://sora1.coding.me/)
+
+
+![主题预览](http://ouo1ro65u.bkt.clouddn.com/cube-5.png)
 
 
 ### 搜索功能
@@ -87,9 +90,6 @@
 
 
 ![lightgallery](http://ouo1ro65u.bkt.clouddn.com/lightgallery.png)
-
-
-目前使用了lightgallery出现的一个问题是在我的小米4原生浏览器图片貌似是加载不出来的, 这个问题待有时间再调试
 
 
 ## 配置说明
@@ -181,10 +181,41 @@ source, lrc, image 可以填路径或者url, 下面是填路径时对应的地�
 ### 友链默认头像
 
     friend_links: friend_links.jpg  // 指向source/images/friend_links.jpg, 你可以自己定制修改路径
-       
+    
+### 评论选择
+    
+目前评论支持友言, 畅言, gitment还有万年被墙的disqus(多说, 网易云等貌似都跪了), 如果您要使用某种评论系统, 那么让其他的为空
+ 
+    comment:
+        # your disqus_shortname
+        disqus:
+        changyan:
+            appid:
+            conf:
+        youyan:
+        # gitment: https://github.com/imsun/gitment
+        # make sure you know how to set it
+        gitment:
+            owner:
+            repo:
+            oauth:
+                client_id:
+                client_secret:
+
+如果您使用了畅言, 要把畅言的浮动框 or 弹出框去掉, 可以进行下面的配置:
+
+    comment_setting:
+      changyan:
+        hide_notice: true
+
+### 统计添加
+
+使用哪种统计, 就添加对应的hash码即可
+
+    analytics:
+      baidu:
+      google:
+
+## 最后
         
-## 写在最后
-
-
-这个项目是目前实习阶段抽空做的, 近段时间估计不怎么更新修改维护(白天实习, 晚上毕设有点忙), 9月份之后估计就有空了,这个主题项目是由[cube-generator](https://github.com/ZEROKISEKI/cube-generator)生成的, [cube-generator](https://github.com/ZEROKISEKI/cube-generator)的gulp构建比较蛋疼, 里面的JS代码也很乱, 预计后面再改, 如果你想看原来的主题代码, 那么可以关注下[cube-generator](https://github.com/ZEROKISEKI/cube-generator)
-
+如果您对本主题感兴趣, 想要在此进行修改, 可以fork[cube-generator](https://github.com/ZEROKISEKI/cube-generator)进行修改.
